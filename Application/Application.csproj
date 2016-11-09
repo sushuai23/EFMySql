@@ -59,6 +59,12 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Dao\MysqlContext.cs" />
+    <Compile Include="Entity\ArticleDetailEntity.cs" />
+    <Compile Include="Entity\ArticleEntity.cs" />
+    <Compile Include="Entity\BaseEntity.cs" />
+    <Compile Include="Entity\FieldEntity.cs" />
+    <Compile Include="Entity\MenuEntity.cs" />
+    <Compile Include="Entity\TypeEntity.cs" />
     <Compile Include="Entity\UserEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

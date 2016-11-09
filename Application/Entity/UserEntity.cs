@@ -12,6 +12,13 @@ namespace Application.Entity
     {
         public long Id { get; set; }
         public string UserName { get; set; }
+        public string LoginName { get; set; }
+        public string Password { get; set; }
         public string Desc { get; set; }
+
+        /// <summary>
+        /// 是否超级管理员
+        /// </summary>
+        public bool IsAdmin { get; set; }
     }
 }

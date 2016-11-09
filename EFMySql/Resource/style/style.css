@@ -1,0 +1,182 @@
+﻿@charset "utf-8";
+ /*  
+*@description: 全局 
+*@author: name 林异频  
+* @update: name ()更新 */
+
+html{width:100%; overflow-x:scroll;}
+body{ font:12px/1.8 "微软雅黑";color:#545454; min-width:320px;}
+body.bg{background: #f5f6f5;}
+@media only screen and (min-width:320px) {
+html{ overflow-x:hidden;}
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0;padding: 0;border: 0;outline: none;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+ol,ul,li{list-style-image:none;list-style-position:outside;list-style-type:none;}
+input{ padding:0; margin:0; font-family:"微软雅黑"; outline:none}
+img{vertical-align: middle;}
+.left{float:left;}
+.right{float:right;}
+.clear{clear:both; height:0px; width:0; margin:0; padding:0; border:none; overflow:hidden; }
+dt{font-weight: normal;}
+dt,dd{line-height: 1.8;}
+a{text-decoration:none; cursor:pointer; color:#858585;transition-property:box-shadow,color,background-color,border;transition-duration:.3s;}
+a:hover{ color:#076aae;text-decoration: none;}
+h1{ font-size:18px}
+h2{ font-size:18px}
+h3{ font-size:16px}
+h4{ font-size:14px}
+h5{ font-size:12px}
+.height30{ height:20px;}
+
+
+.cl{clear: both; overflow: hidden;}
+
+/**************头部**************/
+.top{background: #f7f7f7; color: #5c5c5c; padding: 5px 0; display: none;}
+.top .container dt{float: left; line-height: 24px;height: 24px;}
+.top .container dt p{float: left; display: inline-block; margin-right: 3em;}
+.top .container dt p i{ margin-right: 5px;font-size: 18px;float:left; display: inline-block;}
+.top .container dd{float:right;}
+.top .container dd a{float: left;margin-left: 15px;}
+.top-1{float:left;margin-left: 15px; position: relative; cursor: pointer;}
+.top-1 p{position: absolute; background: url(../images/top2.png) no-repeat 0 0;width:100px; height:108px; top: 20px;left: -43px;z-index: 5; padding: 15px 6px 6px 8px; display: none;}
+.top-1 p img{width:100%;}
+.logo{padding: 10px 0;clear:both;overflow:hidden;background: #fff;margin: 0 -5px;}
+.logo h2{float: left;height: 30px;overflow: hidden;}
+.logo h2 img{height: 100%;vertical-align: top;}
+.logo-1{float:right; display: none; padding:7px 0; text-align: center;}
+.logo-1 li{float: left; display: inline-block;margin-left: 20px;font-size: 14px;}
+.logo-1 li span{ display: block; overflow: hidden;}
+.logo-1 li span img{height: 34px;}
+.logo-1 li p{ padding: 4px 0;}
+.logo i#right-menu{float: right;line-height: 30px;display: inline-block; color: #133984;font-size: 25px;}
+#sidr-right{ display:none;right: -50%;position: fixed;top: 0;height: 100%;z-index: 12;width:40%;overflow-x: none;overflow-y: auto;background: #133984;color: #FFF; padding: 10px 0;}
+#sidr-right li p{font-size: 14px;position: relative; padding: 0 10px; line-height: 36px;}
+#sidr-right li p.on:after{ position: absolute;right:0;top: 0;}
+#sidr-right li.hover p{ background: #4680ef;}
+#sidr-right li.hover p.on:after{content: "\e604";}
+#sidr-right li a{ color: #fff; display: block;}
+#sidr-right li{clear: both; overflow: hidden;}
+#sidr-right li .right-nav1{ display: none; clear: both;overflow: hidden; padding: 5px 10px 0;line-height: 26px;}
+#sidr-right li .right-nav1 a{clear: both; overflow: hidden;}
+#sidr-right li .right-nav1 a:before,#sidr-right li p.on:after{
+  font-family:"iconfont" !important;
+  font-size:12px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;padding-right: 5px;content: "\e60e";    
+}
+#sidr-right li.hover .right-nav1{display: block;}
+.csh-screen{clear: both; overflow: hidden; position: fixed;top: 0; left: 0; z-index: 10;width: 100%; height: 100%; display: none; background: #fff;opacity:0;filter:alpha(opacity=0);}
+.sidr-right-open .csh-screen#right-menu1{ display: block;}
+menu{ display: none; background: #076aae; height: 50px; border-bottom: 5px solid #133984; clear: both;overflow: hidden;}
+menu ul li{float: left;display: inline-block; position: relative;}
+menu ul li p{ line-height:45px;overflow: hidden;position: relative;}
+menu ul li p a{ color: #fff; padding: 0 22px; display: inline-block;}
+menu ul li.on,menu ul li a:hover{ background: #133984; color: #fff;}
+@media only screen and (min-width:768px) {
+/**************头部**************/
+.top{ display: block;}
+.logo .container h2{height:73px; }
+.logo .container i#right-menu{ display: none;}
+.logo-1{display: inline-block;}
+menu{ display: block;}
+}
+@media only screen and (min-width:992px) {
+menu .container li p{font-size: 16px;}
+menu ul li p a{ color: #fff; padding: 0 28px; display: inline-block;}
+menu .container li dl{ padding:20px; min-width:400px;font-size: 14px;}
+menu .container li dl dd{width: 100px;}
+menu .container li dl dt{width: 240px;}
+}
+@media only screen and (min-width:1200px) {
+
+menu .container li dl{ padding:20px; min-width:400px;font-size: 14px;}
+menu .container li p a{ padding: 0 41px;}
+}
+/**************banner**************/
+/*slider*/
+.slick-slider{ position: relative; z-index: 1; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -ms-touch-action: none; touch-action: none; -webkit-tap-highlight-color: transparent; }
+.slick-list { position: relative; overflow: hidden; display: block;}
+.slick-list:focus { outline: none; }
+.slick-list.dragging { cursor: pointer; cursor: hand; }
+.slick-track { position: relative; left: 0; top: 0; display: block; zoom: 1; }
+.slick-track:before,.slick-track:after { content: ""; display: table; }
+.slick-track:after { clear: both; }
+.slick-loading .slick-track { visibility: hidden; }
+.slick-slide { float: left; height: 100%; min-height: 1px; display: none; }
+.slick-slide.slick-loading img { display: none; }
+.slick-slide.dragging img { pointer-events: none; }
+.slick-initialized .slick-slide { display: block; }
+.slick-loading .slick-slide { visibility: hidden; }
+.slick-vertical .slick-slide { display: block; height: auto; border: 1px solid transparent; }
+.slick-slider .slick-list, .slick-track, .slick-slide, .slick-slide img { -webkit-transform: translate3d(0, 0, 0); -moz-transform: translate3d(0, 0, 0); -ms-transform: translate3d(0, 0, 0); -o-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+
+.banner{ position: relative;  clear: both;overflow: hidden; height: 200px;}
+.banner .slider a{background-size: auto 100% !important; display: block;height: 200px;}
+.banner a img{ width:100%; vertical-align:top}
+/* dots */
+.banner .slick-dots { position: absolute; text-align: center; left: 0; bottom:2%;width: 100%;z-index: 2; margin: 0;}
+.banner .slick-dots li { overflow: hidden; display: inline-block; margin: 0 5px;}
+.banner .slick-dots li button{ display:inline-block; outline: none; line-height: 0; font-size: 0; border: 0; color: transparent; padding: 0; cursor: pointer; outline: none;width:10px; height:10px;border-radius: 50%;  background:rgba(255,255,255,0.6);}
+.banner .slick-dots li.slick-active button{background:#133984;}
+
+
+@media only screen and (min-width:768px) {
+/**************banner**************/    
+.banner,.banner .slider a{height:460px;}
+.banner .slick-dots li button{ width:13px; height:13px;}
+}  
+/**************foot**************/  
+footer{background: #272727; clear: both;}
+.foot1{ background: #3c3c3c; clear: both;overflow: hidden; padding:8px 0;}
+.foot1 dl dt{border: 1px solid #9d9d9d;border-radius: 2px; background: #fff;height: 28px; overflow:hidden; position: relative;}
+.foot1 dl dt input{ border: 0; height: 26px; line-height: 26px;float: left; display: inline-block;}
+.foot1 dl dt input[type="text"]{width:75%; padding:0 1em 0 2.5em}
+.foot1 dl dt input[type="submit"]{width:25%;float: right;}
+.foot1 dl dt:before{
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;content: "\e60d";    
+  height: 26px;display: inline-block; position: absolute;left: 7px; top: 0;
+}
+.foot1 dl dd{float: right;color: #d6d6d6; line-height: 26px;font-weight: bold;font-size: 18px; display: none;}
+.foot2{ display: none; clear: both; overflow: hidden; padding: 25px 0;}
+.foot2 ul.foot-ul{ clear: both; overflow: hidden;}
+.foot2 ul.foot-ul li{float: left;width:14.285% ;line-height: 2.2;}
+.foot2 ul.foot-ul li b{ display: block;font-size: 14px; padding: 5px 0;}
+.foot2 ul.foot-ul li b a{ color: #e3e3e3;}
+.foot2 ul.foot-ul li p span{ margin: 3px 0; display: block; clear: both;}
+.foot2 ul.foot-ul li p span a{ padding: 0 3px;border: 1px solid #272727; color: #9a9a9a;}
+.foot2 ul.foot-ul li p span a:hover{background: #131313;border: 1px solid #000;}
+.foot-wx{ display: none;float: right;width:22%; background: #4680ef; max-width:220px;overflow: hidden; margin-top:25px;}
+.foot-wx p{color: #fff; overflow: hidden; padding: 35px 2px 0 6px;}
+.foot-wx span{float: right;width: 50%; overflow: hidden;}
+.foot-wx span img{width: 100%;}
+.foot3{background: url(../images/foot1.png) repeat-x 0 0; padding: 15px; margin: 0 -15px; text-align: center; color: #797979; clear: both; overflow: hidden;}
+@media only screen and (min-width:768px) {
+.foot1 dl dt{float: left;width: 240px;}
+.foot1 dl dd{display: inline-block;}
+.foot2{ display: block;}   
+.foot3{ margin: 0; padding: 15px 0; text-align: left;} 
+.foot3 dd{float: left; width: 70%;}
+.foot3 dt{float: right;width:25%}
+}
+@media only screen and (min-width:992px) {
+.foot2 ul.foot-ul{ clear: none;float: left;width:78%;}
+.foot-wx{ display: block;}
+}
+
+
+a .indexPic1 {
+    background:url(~/Resource/style/img/1.jpg) no-repeat center 0;
+}
+a .indexPic2 {
+    background:url(~/Resource/style/img/1.jpg) no-repeat center 0;
+}
