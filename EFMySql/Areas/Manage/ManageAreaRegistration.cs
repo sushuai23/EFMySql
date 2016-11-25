@@ -17,7 +17,8 @@ namespace EFMySql.Areas.Manage
             context.MapRoute(
                 "Manage_default",
                 "Manage/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { Controller="Home", action = "Index", id = UrlParameter.Optional },
+                new string[] { "EFMySql.Areas.Manage.Controllers" }
             );
         }
     }

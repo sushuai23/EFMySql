@@ -1,14 +1,14 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(EFMySql.Startup))]
-namespace EFMySql
+[assembly: OwinStartupAttribute(typeof(WebUI.Startup))]
+namespace WebUI
 {
     public partial class Startup
     {
         public void Configuration(IAppBuilder app)
         {
-            
+            ConfigureAuth(app);
         }
     }
 }

@@ -34,6 +34,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -66,14 +67,12 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -118,17 +117,10 @@
       <Private>True</Private>
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Owin">
-      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin">
       <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
@@ -140,13 +132,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Manage\Controllers\AccountController.cs" />
     <Compile Include="Areas\Manage\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Manage\Controllers\MenuController.cs" />
+    <Compile Include="Areas\Manage\Controllers\TestController.cs" />
     <Compile Include="Areas\Manage\ManageAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Manage\Views\Home\index.html" />
@@ -369,7 +362,10 @@
     <Content Include="Resource\ManageDemo\js\plugins\validate\messages_zh.min.js" />
     <Content Include="Resource\Manage\css\animate.css" />
     <Content Include="Resource\Manage\css\bootstrap-rtl.css" />
+    <Content Include="Resource\Manage\css\bootstrap-table.css" />
     <Content Include="Resource\Manage\css\bootstrap.min.css" />
+    <Content Include="Resource\Manage\css\bootstrapTable\bootstrap-table.css" />
+    <Content Include="Resource\Manage\css\bootstrapTable\bootstrap-table.min.css" />
     <Content Include="Resource\Manage\css\demo\webuploader-demo.css" />
     <Content Include="Resource\Manage\css\font-awesome.css" />
     <Content Include="Resource\Manage\css\font-awesome.min.css" />
@@ -482,6 +478,10 @@
     <Content Include="Resource\Manage\img\webuploader.png" />
     <Content Include="Resource\Manage\img\wenku_logo.png" />
     <Content Include="Resource\Manage\js\bootstrap.min.js" />
+    <Content Include="Resource\Manage\js\bootstrapTable\bootstrap-table-zh-CN.js" />
+    <Content Include="Resource\Manage\js\bootstrapTable\bootstrap-table-zh-CN.min.js" />
+    <Content Include="Resource\Manage\js\bootstrapTable\bootstrap-table.js" />
+    <Content Include="Resource\Manage\js\bootstrapTable\bootstrap-table.min.js" />
     <Content Include="Resource\Manage\js\content.js" />
     <Content Include="Resource\Manage\js\hAdmin.js" />
     <Content Include="Resource\Manage\js\index.js" />
@@ -635,6 +635,10 @@
     <Content Include="Areas\Manage\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Manage\Views\Home\Index.cshtml" />
     <Content Include="Areas\Manage\Views\Account\Login.cshtml" />
+    <Content Include="Areas\Manage\Views\Test\Index.cshtml" />
+    <Content Include="Areas\Manage\Views\Menu\Index.cshtml" />
+    <Content Include="Areas\Manage\Views\Shared\_Layout - 复制.cshtml" />
+    <None Include="Properties\PublishProfiles\EFMySql.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -649,7 +653,9 @@
     <Content Include="Upload\img\1.jpg" />
     <Content Include="Upload\img\2.jpg" />
     <Content Include="Views\Test\index.html" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -679,8 +685,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
@@ -688,6 +695,9 @@
       <Project>{408a4ca4-bac4-433c-9fec-8d153395054c}</Project>
       <Name>Application</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
