@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+}
+@Styles.Render("~/Resource/Manage/css/bootstrap.min.css")
+@Scripts.Render("~/Resource/Manage/js/jquery.min.js")
+
+@Styles.Render("~/Resource/Manage/css/bootstrapTable/bootstrap-table.css")
+@Scripts.Render("~/Resource/Manage/js/bootstrapTable/bootstrap-table.js")
+@Scripts.Render("~/Resource/Manage/js/bootstrapTable/bootstrap-table-zh-CN.js")
+
+
+    <div id="divTable"></div>
+
+
+<script>
+    $(function () {
+        //var aa=@ViewBag.MenuList;
+        //console.log(aa.length);
+        var aa = "1";
+        $("#divTable").bootstrapTable({
+            url: "@Url.Action("GetMenuList", "Menu")",
+            //data:"@Url.Action("GetMenuList", "Menu","Manage")",
+            //data:"@ViewBag.MenuList",
+
+            columns: [{
+                field: 'Id',
+                title: 'Item ID'
+            }, {
+                field: 'MenuName',
+                title: 'Item Name'
+            }
+            ]
+        });
+    });
+</script>

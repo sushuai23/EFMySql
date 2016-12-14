@@ -15,5 +15,7 @@ namespace Application.Dao
         }
 
         public virtual DbSet<UserEntity> Users { get; set; }
+
+        public virtual DbSet<MenuEntity> Menus { get; set; }
     }
 }

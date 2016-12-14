@@ -14,5 +14,8 @@ namespace EFMySql.Areas.Manage.Controllers
         {
             return View();
         }
+
+        
+
     }
 }

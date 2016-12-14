@@ -34,6 +34,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -140,6 +141,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Manage\Controllers\AccountController.cs" />
     <Compile Include="Areas\Manage\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Manage\Controllers\MenuController.cs" />
+    <Compile Include="Areas\Manage\Controllers\TestController.cs" />
     <Compile Include="Areas\Manage\ManageAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -369,7 +372,10 @@
     <Content Include="Resource\ManageDemo\js\plugins\validate\messages_zh.min.js" />
     <Content Include="Resource\Manage\css\animate.css" />
     <Content Include="Resource\Manage\css\bootstrap-rtl.css" />
+    <Content Include="Resource\Manage\css\bootstrap-table.css" />
     <Content Include="Resource\Manage\css\bootstrap.min.css" />
+    <Content Include="Resource\Manage\css\bootstrapTable\bootstrap-table.css" />
+    <Content Include="Resource\Manage\css\bootstrapTable\bootstrap-table.min.css" />
     <Content Include="Resource\Manage\css\demo\webuploader-demo.css" />
     <Content Include="Resource\Manage\css\font-awesome.css" />
     <Content Include="Resource\Manage\css\font-awesome.min.css" />
@@ -482,6 +488,10 @@
     <Content Include="Resource\Manage\img\webuploader.png" />
     <Content Include="Resource\Manage\img\wenku_logo.png" />
     <Content Include="Resource\Manage\js\bootstrap.min.js" />
+    <Content Include="Resource\Manage\js\bootstrapTable\bootstrap-table-zh-CN.js" />
+    <Content Include="Resource\Manage\js\bootstrapTable\bootstrap-table-zh-CN.min.js" />
+    <Content Include="Resource\Manage\js\bootstrapTable\bootstrap-table.js" />
+    <Content Include="Resource\Manage\js\bootstrapTable\bootstrap-table.min.js" />
     <Content Include="Resource\Manage\js\content.js" />
     <Content Include="Resource\Manage\js\hAdmin.js" />
     <Content Include="Resource\Manage\js\index.js" />
@@ -635,6 +645,9 @@
     <Content Include="Areas\Manage\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Manage\Views\Home\Index.cshtml" />
     <Content Include="Areas\Manage\Views\Account\Login.cshtml" />
+    <Content Include="Areas\Manage\Views\Test\Index.cshtml" />
+    <Content Include="Areas\Manage\Views\Menu\Index.cshtml" />
+    <Content Include="Areas\Manage\Views\Shared\_Layout - 复制.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
