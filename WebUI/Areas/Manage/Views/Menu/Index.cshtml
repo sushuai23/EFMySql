@@ -8,9 +8,18 @@
 @Styles.Render("~/Resource/Manage/css/bootstrapTable/bootstrap-table.css")
 @Scripts.Render("~/Resource/Manage/js/bootstrapTable/bootstrap-table.js")
 @Scripts.Render("~/Resource/Manage/js/bootstrapTable/bootstrap-table-zh-CN.js")
-
+<html>
+<head>
+    <title></title>
+</head>
+<body>
 
     <div id="divTable"></div>
+</body>
+</html>
+
+
+    
 
 
 <script>
@@ -19,17 +28,28 @@
         //console.log(aa.length);
         var aa = "1";
         $("#divTable").bootstrapTable({
-            url: "@Url.Action("GetMenuList", "Menu")",
+            url: '@Url.Action("GetMenuList","Menu")',//"@Url.Action("GetMenuList", "Menu")",
             //data:"@Url.Action("GetMenuList", "Menu","Manage")",
             //data:"@ViewBag.MenuList",
-
-            columns: [{
-                field: 'Id',
-                title: 'Item ID'
-            }, {
-                field: 'MenuName',
-                title: 'Item Name'
-            }
+            striped: true,
+            
+            pagination: true,
+            pageNumber:1,
+            pageSize: 50,
+            pageList: [50, 100],
+            pagePosition: "bottom",
+            height: 570,
+            rownumbers: true,
+            showFooter: true,
+            autoRowHeight: false,
+            columns: [
+                {
+                    field: 'Id',
+                    title: 'Item ID'
+                }, {
+                    field: 'MenuName',
+                    title: 'Item Name'
+                }
             ]
         });
     });

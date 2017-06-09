@@ -3,16 +3,52 @@
     Layout = null;
 }
 
-<!DOCTYPE html>
+@model List<WebUI.Areas.Manage.Controllers.FileFramework>
+
+
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <style>
+        ul li {
+            border-bottom:1px solid #808080;
+            list-style-type:none;
+        }
+    </style>
 </head>
 <body>
 <div>
     <h2>Hello World!</h2>
+    <div>
+        <ul>
+            @{
+                foreach (var item in Model)
+                {
+                    if (@item.FileType == "mp4")
+                    {
+                        <li>
+                            <span>@item.FileName</span>
+                            <video controls="controls">
+                                <source src="@item.FilePath" type="audio/mp4"/>
+                            </video>
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <span>@item.FileName</span>
+                            <a herf="@item.FilePath">下载</a>
+                        </li>
+                    }
+                }
+            }
+
+        </ul>
+        
+    </div>
+
 </div>
 </body>
 </html>

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Application.Entity
 {
     [Table("ArticleDetail")]
-    public class ArticleDetailEntity
+    public class ArticleDetailEntity:BaseEntity
     {
         public long Id { get; set; }
         public long ArticleId { get; set; }
